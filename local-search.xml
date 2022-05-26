@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/hello-world/"/>
+    <url>/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Hello World</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>纳兰性德经典诗词</title>
+    <link href="/%E7%BA%B3%E5%85%B0%E6%80%A7%E5%BE%B7%E7%BB%8F%E5%85%B8%E8%AF%97%E8%AF%8D/"/>
+    <url>/%E7%BA%B3%E5%85%B0%E6%80%A7%E5%BE%B7%E7%BB%8F%E5%85%B8%E8%AF%97%E8%AF%8D/</url>
+    
+    <content type="html"><![CDATA[<p>【1】人生若只如初见，何事秋风悲画扇。 等闲变却故人心，却道故人心易变。 骊山语罢清宵半，泪雨霖铃终不怨。 何如薄幸锦衣郎，比翼连枝当日愿。 –纳兰性德 《木兰词·拟古决绝词柬友》</p><p>【2】我是人间惆怅客, 知君何事泪纵横, 断肠声里忆平生。 –纳兰性德 《浣溪沙》</p><p>【3】谁念西风独自凉？萧萧黄叶闭疏窗，沉思往事立残阳。被酒莫惊春睡重，赌书消得泼茶香，当时只道是寻常。 –纳兰性德 《浣溪沙》</p><p>【4】明月多情应笑我，笑我如今。 辜负春心，独自闲行独自吟。 近来怕说当时事，结遍兰襟。 月浅灯深，梦里云归何处寻？ –纳兰性德 《采桑子》<br>【5】肠断月明红豆蔻，月似当时，人似当时否？ –纳兰性德 《鬓云松令》</p><p>【6】人生恰如三月花，倾我一生一世念。 来如飞花散似烟，醉里不知年华限。 –纳兰性德 《纳兰词》</p><p>【7】一生一代一双人，争教两处销魂。相思相望不相亲，天为谁春？ –纳兰性德 《画堂春》</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>随记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>从JDBC到MyBatis</title>
+    <link href="/%E4%BB%8EJDBC%E5%88%B0MyBatis/"/>
+    <url>/%E4%BB%8EJDBC%E5%88%B0MyBatis/</url>
+    
+    <content type="html"><![CDATA[<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h4 id="JDBC介绍"><a href="#JDBC介绍" class="headerlink" title="JDBC介绍"></a>JDBC介绍</h4><p>JDBC全称是Java DataBase Connectivity，即：Java数据库连接。简单来说就是用Java语言操作数据库。</p><p>JDBC是SUN公司提供的一套Java连接数据库的规范，具体连接实现由各数据库厂商自行实现，JDBC的实现即所谓的数据库驱动。因此JDBC是不变的，但是驱动有很多种。</p><p><img src="/img/jdbc/jdbc01.jpg" alt="jdbc01"></p><h4 id="JDBC组成"><a href="#JDBC组成" class="headerlink" title="JDBC组成"></a>JDBC组成</h4><p>JDBC核心类：DriverManager、Connection、Statement、ResultSet</p><ol><li>DriverManager：该类管理数据库驱动程序。</li><li>Connection：管理数据库建立的连接。</li><li>Statement/PrepareStatement：负责将要执行的sql提交到数据库。</li><li>ResultSet：管理查询语句返回的结果集。</li></ol><p>JDBC连接数据库基本流程如下：</p><figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1. 导入驱动jar包，</span><br><span class="hljs-comment">//2.注册驱动,由DriverManager管理</span><br>Class.forName(<span class="hljs-string">&quot;com.mysql.jdbc.Driver&quot;</span>);<br><span class="hljs-comment">//3.获取数据库连接对象，</span><br>Connection conn = DriverManager.getConnection(<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/db&quot;</span>, <span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;root&quot;</span>);<br><span class="hljs-comment">//4.定义sql语句</span><br>String sql = <span class="hljs-string">&quot;update account set balance = 500 where id = 1&quot;</span>;<br><span class="hljs-comment">//5.获取执行sql的对象 Statement</span><br>Statement stmt = conn.createStatement();<br><span class="hljs-comment">//6.执行sql</span><br><span class="hljs-keyword">int</span> count = stmt.executeUpdate(sql);<br><span class="hljs-comment">//7.处理结果</span><br>System.out.println(count);<br><span class="hljs-comment">//8.释放资源</span><br>stmt.close();<br>conn.close();<br></code></pre></td></tr></table></figure><h4 id="JDBC疑问"><a href="#JDBC疑问" class="headerlink" title="JDBC疑问"></a>JDBC疑问</h4><p><strong>1. 为什么Class.forName(“com.mysql.jdbc.Driver”);能注册驱动？</strong></p><p>   查看com.mysql.jdbc.Driver.java类可以看到如下信息</p>   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Driver</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">NonRegisteringDriver</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">java</span>.<span class="hljs-title">sql</span>.<span class="hljs-title">Driver</span> </span>&#123;<br>    <span class="hljs-keyword">static</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            java.sql.DriverManager.registerDriver(<span class="hljs-keyword">new</span> Driver());<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException E) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;Can&#x27;t register driver!&quot;</span>);<br>        &#125;<br>    &#125;<br>……<br>&#125;<br></code></pre></td></tr></table></figure><p>   com.mysql.jdbc.Driver类中的static块会创建本类对象，并注册到DriverManager中。这说明只要去加载com.mysql.jdbc.Driver类，那么就会执行这个static块，从而也就会把com.mysql.jdbc.Driver注册到DriverManager中，所以可以把注册驱动类的代码修改为加载驱动类，即：Class.forName(“com.mysql.jdbc.Driver”);</p><p><strong>2. 什么是SQL注入攻击？JDBC如何解决SQL注入问题？</strong></p><p>   我们在书写SQL的时候，通常需要用户在界面录入特定的条件然后拼装成SQL进行查询，所谓SQL注入攻击指的是用户录入了SQL的关键字，比如delete等。用户传入的数据中包含SQL关键字时,就有可能通过这些关键字改变SQL语句的语义,从而执行一些特殊的操作,这样的攻击方式就叫做SQL注入攻击。</p><p>   JDBC是如何解决这个问题的呢？还要从Statement说起。PreparedStatement利用预编译的机制将sql语句的主干和参数分别传输给数据库服务器，从而使数据库分辨的出哪些是SQL语句的主干哪些是参数，这样一来即使参数中带了SQL的关键字,数据库服务器也仅仅将他当作参数值使用，从而从原理上防止了SQL注入的问题。</p><p>   <strong>一句话来总结就是把主干和参数分别传输。</strong></p><p>   其实不仅仅有PreparedStatement，还有一个Statement类也能执行sql语句，功能类似。但是稍微有一点区别，PreparedStatement 与Statement比较：<br>   语法不同：PreparedStatement可以使用预编译的SQL，而Statement只能使用静态的SQL<br>   效率不同： PreparedStatement可以使用SQL缓存区，效率比Statement高<br>   安全性不同： PreparedStatement可以有效防止SQL注入，而Statement不能防止SQL注入。</p><p>   SQL缓存区指的是：使用PrepareStatement对象执行SQL时，SQL被数据库进行解析和编译，然后被放到命令缓冲区，每当执行同一个PrepareStatement对象时，它就会被解析一次，但不会被再次编译。在缓冲区可以发现预编译的命令，并且可以重用。简而言之，PrepareStatement可以减少SQL编译次数提高数据库性能。</p><h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><h4 id="MyBatis介绍"><a href="#MyBatis介绍" class="headerlink" title="MyBatis介绍"></a>MyBatis介绍</h4><p>MyBatis的底层操作封装了JDBC的API，MyBatis的工作原理以及核心流程与JDBC的使用步骤一脉相承，MyBatis的核心对象（SqlSession，Executor）与JDBC的核心对象（Connection，Statement）相互对应。</p><p>上面对JDBC的介绍中，我们知道了JDBC四个核心对象</p><p>（1）DriverManager，用于注册数据库连接<br>（2）Connection，与数据库连接对象<br>（3）Statement/PreparedStatement，操作数据库SQL语句的对象<br>（4）ResultSet，结果集</p><p>同样MybBatis也有四个核心对象</p><p>（1）SqlSession对象，该对象中包含了执行SQL语句的所有方法。类似于JDBC里面的Connection 。<br>（2）Executor接口，它将根据SqlSession传递的参数动态地生成需要执行的SQL语句，类似于JDBC里面的Statement/PreparedStatement，同时负责查询缓存的维护。<br>（3）MappedStatement对象，该对象是对映射SQL的封装，用于存储要映射的SQL语句的id、参数等信息。<br>（4）ResultHandler对象，用于对返回的结果进行处理，最终得到自己想要的数据格式或类型。可以自定义返回类型。</p><h4 id="MyBatis的工作原理"><a href="#MyBatis的工作原理" class="headerlink" title="MyBatis的工作原理"></a>MyBatis的工作原理</h4><p>MyBatis工作原理如下图所示：</p><p><img src="/img/jdbc/jdbc02.jpg" alt="jdbc02"></p><p>上面中流程就是MyBatis内部核心流程，每一步流程的详细说明如下文所述：</p><p>（1）读取MyBatis的配置文件。mybatis-config.xml为MyBatis的全局配置文件，用于配置数据库连接信息。</p><p>（2）加载映射文件。映射文件即SQL映射文件，该文件中配置了操作数据库的SQL语句，需要在MyBatis配置文件mybatis-config.xml中加载。mybatis-config.xml 文件可以加载多个映射文件，每个文件对应数据库中的一张表。</p><p>（3）构造会话工厂。通过MyBatis的环境配置信息构建会话工厂SqlSessionFactory。</p><p>（4）创建会话对象。由会话工厂创建SqlSession对象，该对象中包含了执行SQL语句的所有方法。</p><p>（5）Executor执行器。MyBatis底层定义了一个Executor接口来操作数据库，它将根据SqlSession传递的参数动态地生成需要执行的SQL语句，同时负责查询缓存的维护。</p><p>（6）MappedStatement对象。在Executor接口的执行方法中有一个MappedStatement类型的参数，该参数是对映射信息的封装，用于存储要映射的SQL语句的id、参数等信息。</p><p>（7）输入参数映射。输入参数类型可以是Map、List等集合类型，也可以是基本数据类型和POJO类型。输入参数映射过程类似于JDBC对preparedStatement对象设置参数的过程。</p><p>（8）输出结果映射。输出结果类型可以是Map、List等集合类型，也可以是基本数据类型和POJO类型。输出结果映射过程类似于JDBC对结果集的解析过程。</p><p><strong>备注：</strong></p><p>在JDBC中，Connection不直接执行SQL方法，而是利用Statement或者PreparedStatement来执行方法。</p><blockquote><p>在使用JDBC建立了连接之后，可以使用Connection接口的createStatement()方法来获取Statement对象，也可以调用PreparedStatement()方法获得PreparedStatement对象，通过executeUpdate()方法来执行SQL语句。</p></blockquote><p>而在MyBatis中，SqlSession对象包含了执行SQL语句的所有方法。但是它是委托Executor执行的。</p><p>从某种意义上来看，MyBatis里面的SqlSession类似于JDBC中的Connection，他们都是委托给其他类去执行。</p><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>经过梳理，我们发现，所谓的MyBatis就是把JDBC的方法做了一层封装，这样我们可以更加地简单、方便地编写与数据库交互的逻辑。</p><blockquote><p>参考：</p><p><a href="http://www.mybatis.cn/archives/706.html">http://www.mybatis.cn/archives/706.html</a></p><p><a href="https://www.cnblogs.com/xiaoxli/p/9462196.html">https://www.cnblogs.com/xiaoxli/p/9462196.html</a></p><p><a href="https://www.cnblogs.com/qlqwjy/p/8227665.html">https://www.cnblogs.com/qlqwjy/p/8227665.html</a></p></blockquote>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>dmesg命令查看java程序突然挂掉的原因</title>
+    <link href="/dmesg%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8Bjava%E7%A8%8B%E5%BA%8F%E7%AA%81%E7%84%B6%E6%8C%82%E6%8E%89%E7%9A%84%E5%8E%9F%E5%9B%A0/"/>
+    <url>/dmesg%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8Bjava%E7%A8%8B%E5%BA%8F%E7%AA%81%E7%84%B6%E6%8C%82%E6%8E%89%E7%9A%84%E5%8E%9F%E5%9B%A0/</url>
+    
+    <content type="html"><![CDATA[<p>背景：生产环境中有部分节点突然挂掉，检查日志未发现任何异常，考虑从Linux系统层面查找原因</p><figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 将Killed process日志导入到log中，根据log定位原因</span><br>dmesg | grep -i -B50 <span class="hljs-string">&#x27;Killed process&#x27;</span> &gt; ./test.log<br><br><span class="hljs-comment"># 输出的日志大致如下</span><br><span class="hljs-comment"># [ 3038.563906] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=d780ba53ba736b63899bd321c44b4bd6b8b3b8eeb5d43de010a77396096ec3d0,mems_allowed=0,oom_memcg=/docker/d780ba53ba736b63899bd321c44b4bd6b8b3b8eeb5d43de010a77396096ec3d0,task_memcg=/docker/d780ba53ba736b63899bd321c44b4bd6b8b3b8eeb5d43de010a77396096ec3d0,task=java,pid=2273,uid=0</span><br><span class="hljs-comment"># [ 3038.564018] Memory cgroup out of memory: Killed process 2273 (java) total-vm:5344612kB, anon-rss:762580kB, file-rss:16856kB, shmem-rss:0kB, UID:0 pgtables:3680kB oom_score_adj:0</span><br><br><span class="hljs-comment"># anon-rss:762580kB指的是被kill掉的应用占用的内存，重启该节点，检查该节点对应的docker容器设置的内存大小</span><br>docker stats d780ba53ba73<br><br><span class="hljs-comment"># 显示结果如下：</span><br><span class="hljs-comment"># CONTAINER ID   NAME      CPU %     MEM USAGE / LIMIT   MEM %     NET I/O     BLOCK I/O   PIDS</span><br><span class="hljs-comment"># d780ba53ba73   oom       0.64%     211.1MiB / 800MiB   26.38%    736B / 0B   0B / 0B     26</span><br><span class="hljs-comment"># 可以看出原因是docker将应用内存限制到了800m，但是java内存大小未做限制，重新设置一下内存大小即可</span><br>docker run -d -p 8080:8080 -m 1.5g -e JAVA_OPTS=<span class="hljs-string">&#x27;-Xmx1008M -Xms1008M -Xmn336M -XX:MaxMetaspaceSize=128M -XX:MetaspaceSize=128M&#x27;</span> --name  oom oom<br><br><span class="hljs-comment"># 思路来源：https://blog.csdn.net/weixin_39649478/article/details/111889771</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>零宽空格（\u200B）</title>
+    <link href="/%E9%9B%B6%E5%AE%BD%E7%A9%BA%E6%A0%BC/"/>
+    <url>/%E9%9B%B6%E5%AE%BD%E7%A9%BA%E6%A0%BC/</url>
+    
+    <content type="html"><![CDATA[<h3 id="u200B，零宽空格"><a href="#u200B，零宽空格" class="headerlink" title="\u200B，零宽空格"></a>\u200B，零宽空格</h3><p>今天遇到一个奇怪的问题，前端的一个文本框，从富文本编辑器中复制一个字符串粘贴进去，比如：”测试001”，字符串通过json传到后端，保存到数据库中。在保存到数据库中之前全流程都没有发现这个字符串的异常，保存到数据库中以后，发现字符串后面多了个中文的”？”。排查了一下发现数据库是GBK编码的，推知此字符应该是一个UTF-8编码中不可见的字符。</p><p>为了找到这个字符串的问题，重新将字符串从富文本编辑器中复制出来粘贴到前端文本框，再从前端文本框粘贴回IDEA的文本框，发现字符串后面多了一个”\u200B”的字符。</p><p>进一步查询得知，此字符是一个<a href="https://zh.wikipedia.org/wiki/%E9%9B%B6%E5%AE%BD%E7%A9%BA%E6%A0%BC">零宽空格 </a></p><p>去除办法也很简单。</p><p>测试代码：</p><figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs java">String s = <span class="hljs-string">&quot;测试\u200B&quot;</span>;<br>System.out.println(<span class="hljs-string">&quot;字符串s为：&#x27;&quot;</span> + s + <span class="hljs-string">&quot;&#x27;,长度为：&quot;</span> + s.length());<br>System.out.println(s.equals(<span class="hljs-string">&quot;测试&quot;</span>));<br>s = s.replaceAll(<span class="hljs-string">&quot;\u200B&quot;</span>,<span class="hljs-string">&quot;&quot;</span>);<br>System.out.println(<span class="hljs-string">&quot;字符串s为：&#x27;&quot;</span> + s + <span class="hljs-string">&quot;&#x27;,长度为：&quot;</span> + s.length());<br>System.out.println(s.equals(<span class="hljs-string">&quot;测试&quot;</span>));<br></code></pre></td></tr></table></figure><p>输出结果：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">字符串s为：<span class="hljs-string">&#x27;测试​&#x27;</span>,长度为：<span class="hljs-number">3</span><br><span class="hljs-keyword">false</span><br>字符串s为：<span class="hljs-string">&#x27;测试&#x27;</span>,长度为：<span class="hljs-number">2</span><br><span class="hljs-keyword">true</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>字符串</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>使用Github Action实现Hexo博客自动编译部署</title>
+    <link href="/%E4%BD%BF%E7%94%A8Github-Action%E5%AE%9E%E7%8E%B0Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E9%83%A8%E7%BD%B2/"/>
+    <url>/%E4%BD%BF%E7%94%A8Github-Action%E5%AE%9E%E7%8E%B0Hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E9%83%A8%E7%BD%B2/</url>
+    
+    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>​       Hexo的自动部署编译有多种形式，比如一个源码分支，一个博客分支或者一个源码项目一个博客项目。本文使用第二种方案，一个私有的博客源码项目新增git提交后自动部署到xxxx.github.io的博客项目中。</p><h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><p>总共分三步：1、创建博客项目。2、创建博客源码项目。3、开启GitHub Action自动部署</p><p>1、2步不再展开，主要介绍第3步.</p><h5 id="（1）创建SSH-KEY"><a href="#（1）创建SSH-KEY" class="headerlink" title="（1）创建SSH KEY"></a>（1）创建SSH KEY</h5><p>执行生成ssh key的命令</p><figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;example@example.com&quot;</span><br></code></pre></td></tr></table></figure><p>一路回车，会得到两个文件id_rsa和id_rsa.pub。</p><h5 id="（2）部署SSH-KEY"><a href="#（2）部署SSH-KEY" class="headerlink" title="（2）部署SSH KEY"></a>（2）部署SSH KEY</h5><ul><li><p>在源码项目中点击Settings然后点击左侧的Secrets，然后新建一个secret。</p><p>secret的名字设置为HEXO_DEPLOY_KEY，内容将id_rsa文件中的信息全部复制填入即可</p></li><li><p>在xxx.github.io的博客项目中点击Settings然后点击左侧的Deploy keys，添加一个deploy key。</p><p>deploy key的名字也设置为HEXO_DEPLOY_KEY，内容将id_rsa.pub中的文件信息全部填入即可。</p></li></ul><h5 id="（3）设置Github-Action"><a href="#（3）设置Github-Action" class="headerlink" title="（3）设置Github Action"></a>（3）设置Github Action</h5><p>在源码项目中，点击Actions，新建一个workflow，并填入如下内容（具体可以根据自己的情况自行修改）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs bash">name: Deploy Blog<br><br>on: [push] <span class="hljs-comment"># 当有新push时运行</span><br><br>env:<br>  TZ: Asia/Shanghai<br><br><span class="hljs-built_in">jobs</span>:<br>  build: <span class="hljs-comment"># 一项叫做build的任务</span><br><br>    runs-on: ubuntu-latest <span class="hljs-comment"># 在最新版的Ubuntu系统下运行</span><br>    <br>    steps:<br>    - name: Checkout <span class="hljs-comment"># 将仓库内master分支的内容下载到工作目录</span><br>      uses: actions/checkout@v1 <span class="hljs-comment"># 脚本来自 https://github.com/actions/checkout</span><br>      <br>    - name: Use Node.js 14.x <span class="hljs-comment"># 配置Node环境</span><br>      uses: actions/setup-node@v1 <span class="hljs-comment"># 配置脚本来自 https://github.com/actions/setup-node</span><br>      with:<br>        node-version: <span class="hljs-string">&quot;14.x&quot;</span><br>    <br>    - name: Setup Hexo env<br>      env:<br>        ACTION_DEPLOY_KEY: <span class="hljs-variable">$&#123;&#123; secrets.HEXO_DEPLOY_KEY &#125;</span>&#125; <span class="hljs-comment"># 这里是上面xxx.github.io新增的公钥：HEXO_DEPLOY_KEY</span><br>      run: |<br>        <span class="hljs-comment"># set up private key for deploy</span><br>        mkdir -p ~/.ssh/<br>        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$ACTION_DEPLOY_KEY</span>&quot;</span> | tr -d <span class="hljs-string">&#x27;\r&#x27;</span> &gt; ~/.ssh/id_rsa <span class="hljs-comment"># 配置私钥</span><br>        chmod 600 ~/.ssh/id_rsa<br>        ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts<br>        <span class="hljs-comment"># set git infomation</span><br>        git config --global user.name <span class="hljs-string">&#x27;myname&#x27;</span> <span class="hljs-comment"># 换成你自己的邮箱和名字</span><br>        git config --global user.email <span class="hljs-string">&#x27;example@example.com&#x27;</span><br>        <span class="hljs-comment"># install dependencies</span><br>        npm i -g hexo-cli <span class="hljs-comment"># 安装hexo</span><br>        npm i<br>        <br>  <br>    - name: Deploy<br>      run: |<br>        <span class="hljs-comment"># publish</span><br>        <span class="hljs-comment"># 执行部署程序</span><br>        hexo clean<br>        hexo g --debug<br>        hexo deploy <br><br></code></pre></td></tr></table></figure><p>到这里就大功告成了，你会发现你的博客源码项目已经自动编译部署到xxx.github.io的项目上了。</p><p>到目前为止，你会发现在源码项目中在线编辑的md文件保存后也会自动编译部署到xxx.github.io项目上，算是变相实现了在线编辑吧。</p><p>当然你也可以将源码项目克隆到本地，本地创作完成后推送到Github中，Github Action也会帮你完成编译部署的操作。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Tips</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Windows控制台代理设置（PowerShell和cmd）</title>
+    <link href="/Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/"/>
+    <url>/Windows%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h3 id="PowerShell设置代理"><a href="#PowerShell设置代理" class="headerlink" title="PowerShell设置代理"></a>PowerShell设置代理</h3><ul><li><p>设置代理</p><figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs bash">netsh winhttp <span class="hljs-built_in">set</span> proxy <span class="hljs-string">&quot;127.0.0.1:1080&quot;</span><br></code></pre></td></tr></table></figure></li><li><p>恢复默认</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">netsh winhttp reset proxy<br></code></pre></td></tr></table></figure></li></ul><h3 id="CMD设置代理"><a href="#CMD设置代理" class="headerlink" title="CMD设置代理"></a>CMD设置代理</h3><ul><li><p>设置代理</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#HTTP 代理设置：</span><br><span class="hljs-built_in">set</span> http_proxy=http://127.0.0.1:1080<br><span class="hljs-built_in">set</span> https_proxy=http://127.0.0.1:1080<br><span class="hljs-comment"># SOCKS5 代理设置：</span><br><span class="hljs-built_in">set</span> http_proxy=socks5://127.0.0.1:1080<br><span class="hljs-built_in">set</span> https_proxy=socks5://127.0.0.1:1080<br><br><span class="hljs-comment">#  如果有用户名密码</span><br><span class="hljs-built_in">set</span> http_proxy_user=user<br><span class="hljs-built_in">set</span> http_proxy_pass=pass<br><br><span class="hljs-built_in">set</span> https_proxy_user=user<br><span class="hljs-built_in">set</span> https_proxy_pass=pass<br><br><span class="hljs-comment"># 设置不走代理的ip</span><br><span class="hljs-comment"># set NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24</span><br><br><br><span class="hljs-comment"># Linux 下命令为 export</span><br><span class="hljs-comment"># export http_proxy=http://127.0.0.1:1080</span><br><br><span class="hljs-comment">#如果不确定是用set还是export，直接输入set或者export输出一大串列表的为当前应该使用的方式</span><br></code></pre></td></tr></table></figure></li><li><p>恢复默认</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">unset</span> http_proxy<br><span class="hljs-built_in">unset</span> https_proxy<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Tips</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
