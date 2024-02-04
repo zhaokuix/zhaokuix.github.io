@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo/favicon.png">
+  <link rel="icon" href="/img/logo/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="zhaokuix">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="JDBCJDBC介绍JDBC全称是Java DataBase Connectivity，即：Java数据库连接。简单来说就是用Java语言操作数据库。 JDBC是SUN公司提供的一套Java连接数据库的规范，具体连接实现由各数据库厂商自行实现，JDBC的实现即所谓的数据库驱动。因此JDBC是不变的，但是驱动有很多种。  JDBC组成JDBC核心类：DriverManager、Connection、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从JDBC到MyBatis">
+<meta property="og:url" content="http://example.com/%E4%BB%8EJDBC%E5%88%B0MyBatis/index.html">
+<meta property="og:site_name" content="zhaokuix&#39;s Blog">
+<meta property="og:description" content="JDBCJDBC介绍JDBC全称是Java DataBase Connectivity，即：Java数据库连接。简单来说就是用Java语言操作数据库。 JDBC是SUN公司提供的一套Java连接数据库的规范，具体连接实现由各数据库厂商自行实现，JDBC的实现即所谓的数据库驱动。因此JDBC是不变的，但是驱动有很多种。  JDBC组成JDBC核心类：DriverManager、Connection、">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/jdbc/jdbc01.jpg">
+<meta property="og:image" content="http://example.com/img/jdbc/jdbc02.jpg">
+<meta property="article:published_time" content="2021-12-30T08:16:41.000Z">
+<meta property="article:modified_time" content="2024-02-04T06:08:31.649Z">
+<meta property="article:author" content="zhaokuix">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/jdbc/jdbc01.jpg">
+  
+  
+  <title>从JDBC到MyBatis - zhaokuix&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://lib.baomitu.com/highlight.js/10.7.3/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"oeRPVmt1sxChBM8Ayms5tzxF-MdYXbMMI","app_key":"PNqjUeiDMIwvR7EkViNc45UT","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>zhaokuix&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="从JDBC到MyBatis">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-30 16:16" pubdate>
+        2021年12月30日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      34 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">从JDBC到MyBatis</h1>
+            
+            <div class="markdown-body">
+              <h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h4 id="JDBC介绍"><a href="#JDBC介绍" class="headerlink" title="JDBC介绍"></a>JDBC介绍</h4><p>JDBC全称是Java DataBase Connectivity，即：Java数据库连接。简单来说就是用Java语言操作数据库。</p>
+<p>JDBC是SUN公司提供的一套Java连接数据库的规范，具体连接实现由各数据库厂商自行实现，JDBC的实现即所谓的数据库驱动。因此JDBC是不变的，但是驱动有很多种。</p>
+<p><img src="/img/jdbc/jdbc01.jpg" srcset="/img/loading.gif" lazyload alt="jdbc01"></p>
+<h4 id="JDBC组成"><a href="#JDBC组成" class="headerlink" title="JDBC组成"></a>JDBC组成</h4><p>JDBC核心类：DriverManager、Connection、Statement、ResultSet</p>
+<ol>
+<li>DriverManager：该类管理数据库驱动程序。</li>
+<li>Connection：管理数据库建立的连接。</li>
+<li>Statement/PrepareStatement：负责将要执行的sql提交到数据库。</li>
+<li>ResultSet：管理查询语句返回的结果集。</li>
+</ol>
+<p>JDBC连接数据库基本流程如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//1. 导入驱动jar包，</span><br><span class="hljs-comment">//2.注册驱动,由DriverManager管理</span><br>Class.forName(<span class="hljs-string">&quot;com.mysql.jdbc.Driver&quot;</span>);<br><span class="hljs-comment">//3.获取数据库连接对象，</span><br>Connection conn = DriverManager.getConnection(<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/db&quot;</span>, <span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;root&quot;</span>);<br><span class="hljs-comment">//4.定义sql语句</span><br>String sql = <span class="hljs-string">&quot;update account set balance = 500 where id = 1&quot;</span>;<br><span class="hljs-comment">//5.获取执行sql的对象 Statement</span><br>Statement stmt = conn.createStatement();<br><span class="hljs-comment">//6.执行sql</span><br><span class="hljs-keyword">int</span> count = stmt.executeUpdate(sql);<br><span class="hljs-comment">//7.处理结果</span><br>System.out.println(count);<br><span class="hljs-comment">//8.释放资源</span><br>stmt.close();<br>conn.close();<br></code></pre></td></tr></table></figure>
+
+<h4 id="JDBC疑问"><a href="#JDBC疑问" class="headerlink" title="JDBC疑问"></a>JDBC疑问</h4><p><strong>1. 为什么Class.forName(“com.mysql.jdbc.Driver”);能注册驱动？</strong></p>
+<p>   查看com.mysql.jdbc.Driver.java类可以看到如下信息</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Driver</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">NonRegisteringDriver</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">java</span>.<span class="hljs-title">sql</span>.<span class="hljs-title">Driver</span> </span>&#123;<br>    <span class="hljs-keyword">static</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            java.sql.DriverManager.registerDriver(<span class="hljs-keyword">new</span> Driver());<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException E) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;Can&#x27;t register driver!&quot;</span>);<br>        &#125;<br>    &#125;<br>……<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>   com.mysql.jdbc.Driver类中的static块会创建本类对象，并注册到DriverManager中。这说明只要去加载com.mysql.jdbc.Driver类，那么就会执行这个static块，从而也就会把com.mysql.jdbc.Driver注册到DriverManager中，所以可以把注册驱动类的代码修改为加载驱动类，即：Class.forName(“com.mysql.jdbc.Driver”);</p>
+<p><strong>2. 什么是SQL注入攻击？JDBC如何解决SQL注入问题？</strong></p>
+<p>   我们在书写SQL的时候，通常需要用户在界面录入特定的条件然后拼装成SQL进行查询，所谓SQL注入攻击指的是用户录入了SQL的关键字，比如delete等。用户传入的数据中包含SQL关键字时,就有可能通过这些关键字改变SQL语句的语义,从而执行一些特殊的操作,这样的攻击方式就叫做SQL注入攻击。</p>
+<p>   JDBC是如何解决这个问题的呢？还要从Statement说起。PreparedStatement利用预编译的机制将sql语句的主干和参数分别传输给数据库服务器，从而使数据库分辨的出哪些是SQL语句的主干哪些是参数，这样一来即使参数中带了SQL的关键字,数据库服务器也仅仅将他当作参数值使用，从而从原理上防止了SQL注入的问题。</p>
+<p>   <strong>一句话来总结就是把主干和参数分别传输。</strong></p>
+<p>   其实不仅仅有PreparedStatement，还有一个Statement类也能执行sql语句，功能类似。但是稍微有一点区别，PreparedStatement 与Statement比较：<br>   语法不同：PreparedStatement可以使用预编译的SQL，而Statement只能使用静态的SQL<br>   效率不同： PreparedStatement可以使用SQL缓存区，效率比Statement高<br>   安全性不同： PreparedStatement可以有效防止SQL注入，而Statement不能防止SQL注入。</p>
+<p>   SQL缓存区指的是：使用PrepareStatement对象执行SQL时，SQL被数据库进行解析和编译，然后被放到命令缓冲区，每当执行同一个PrepareStatement对象时，它就会被解析一次，但不会被再次编译。在缓冲区可以发现预编译的命令，并且可以重用。简而言之，PrepareStatement可以减少SQL编译次数提高数据库性能。</p>
+<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><h4 id="MyBatis介绍"><a href="#MyBatis介绍" class="headerlink" title="MyBatis介绍"></a>MyBatis介绍</h4><p>MyBatis的底层操作封装了JDBC的API，MyBatis的工作原理以及核心流程与JDBC的使用步骤一脉相承，MyBatis的核心对象（SqlSession，Executor）与JDBC的核心对象（Connection，Statement）相互对应。</p>
+<p>上面对JDBC的介绍中，我们知道了JDBC四个核心对象</p>
+<p>（1）DriverManager，用于注册数据库连接<br>（2）Connection，与数据库连接对象<br>（3）Statement/PreparedStatement，操作数据库SQL语句的对象<br>（4）ResultSet，结果集</p>
+<p>同样MybBatis也有四个核心对象</p>
+<p>（1）SqlSession对象，该对象中包含了执行SQL语句的所有方法。类似于JDBC里面的Connection 。<br>（2）Executor接口，它将根据SqlSession传递的参数动态地生成需要执行的SQL语句，类似于JDBC里面的Statement/PreparedStatement，同时负责查询缓存的维护。<br>（3）MappedStatement对象，该对象是对映射SQL的封装，用于存储要映射的SQL语句的id、参数等信息。<br>（4）ResultHandler对象，用于对返回的结果进行处理，最终得到自己想要的数据格式或类型。可以自定义返回类型。</p>
+<h4 id="MyBatis的工作原理"><a href="#MyBatis的工作原理" class="headerlink" title="MyBatis的工作原理"></a>MyBatis的工作原理</h4><p>MyBatis工作原理如下图所示：</p>
+<p><img src="/img/jdbc/jdbc02.jpg" srcset="/img/loading.gif" lazyload alt="jdbc02"></p>
+<p>上面中流程就是MyBatis内部核心流程，每一步流程的详细说明如下文所述：</p>
+<p>（1）读取MyBatis的配置文件。mybatis-config.xml为MyBatis的全局配置文件，用于配置数据库连接信息。</p>
+<p>（2）加载映射文件。映射文件即SQL映射文件，该文件中配置了操作数据库的SQL语句，需要在MyBatis配置文件mybatis-config.xml中加载。mybatis-config.xml 文件可以加载多个映射文件，每个文件对应数据库中的一张表。</p>
+<p>（3）构造会话工厂。通过MyBatis的环境配置信息构建会话工厂SqlSessionFactory。</p>
+<p>（4）创建会话对象。由会话工厂创建SqlSession对象，该对象中包含了执行SQL语句的所有方法。</p>
+<p>（5）Executor执行器。MyBatis底层定义了一个Executor接口来操作数据库，它将根据SqlSession传递的参数动态地生成需要执行的SQL语句，同时负责查询缓存的维护。</p>
+<p>（6）MappedStatement对象。在Executor接口的执行方法中有一个MappedStatement类型的参数，该参数是对映射信息的封装，用于存储要映射的SQL语句的id、参数等信息。</p>
+<p>（7）输入参数映射。输入参数类型可以是Map、List等集合类型，也可以是基本数据类型和POJO类型。输入参数映射过程类似于JDBC对preparedStatement对象设置参数的过程。</p>
+<p>（8）输出结果映射。输出结果类型可以是Map、List等集合类型，也可以是基本数据类型和POJO类型。输出结果映射过程类似于JDBC对结果集的解析过程。</p>
+<p><strong>备注：</strong></p>
+<p>在JDBC中，Connection不直接执行SQL方法，而是利用Statement或者PreparedStatement来执行方法。</p>
+<blockquote>
+<p>在使用JDBC建立了连接之后，可以使用Connection接口的createStatement()方法来获取Statement对象，也可以调用PreparedStatement()方法获得PreparedStatement对象，通过executeUpdate()方法来执行SQL语句。</p>
+</blockquote>
+<p>而在MyBatis中，SqlSession对象包含了执行SQL语句的所有方法。但是它是委托Executor执行的。</p>
+<p>从某种意义上来看，MyBatis里面的SqlSession类似于JDBC中的Connection，他们都是委托给其他类去执行。</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>经过梳理，我们发现，所谓的MyBatis就是把JDBC的方法做了一层封装，这样我们可以更加地简单、方便地编写与数据库交互的逻辑。</p>
+<blockquote>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="http://www.mybatis.cn/archives/706.html">http://www.mybatis.cn/archives/706.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoxli/p/9462196.html">https://www.cnblogs.com/xiaoxli/p/9462196.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qlqwjy/p/8227665.html">https://www.cnblogs.com/qlqwjy/p/8227665.html</a></p>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%E7%BA%B3%E5%85%B0%E6%80%A7%E5%BE%B7%E7%BB%8F%E5%85%B8%E8%AF%97%E8%AF%8D/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">纳兰性德经典诗词</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/dmesg%E5%91%BD%E4%BB%A4%E6%9F%A5%E7%9C%8Bjava%E7%A8%8B%E5%BA%8F%E7%AA%81%E7%84%B6%E6%8C%82%E6%8E%89%E7%9A%84%E5%8E%9F%E5%9B%A0/">
+                        <span class="hidden-mobile">dmesg命令查看java程序突然挂掉的原因</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.5.11/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://twikoo.koux.top/","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.plugins.initFancyBox('#twikoo .tk-content img:not(.tk-owo-emotion)');
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
